@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>553946679155-d68v9pcmmeebklg824lhhuc125bp2enr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.553946679155-d68v9pcmmeebklg824lhhuc125bp2enr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCgQuA3jEp4YPmFQgkvuxRVrArvO7MDaAA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>553946679155</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gdst.org.Gagan-social</string>
+	<key>PROJECT_ID</key>
+	<string>gagan-social</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gagan-social.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:553946679155:ios:c16633b62f48460c</string>
+	<key>DATABASE_URL</key>
+	<string>https://gagan-social.firebaseio.com</string>
+</dict>
+</plist>

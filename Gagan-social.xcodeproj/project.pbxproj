@@ -179,7 +179,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -400,7 +400,6 @@
 			baseConfigurationReference = DDBADE9D5BFD8830C78016B2 /* Pods-Gagan-social.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Gagan-social/Gagan-social.entitlements";
 				DEVELOPMENT_TEAM = 5L8XK4NFJS;
 				INFOPLIST_FILE = "Gagan-social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -415,7 +414,6 @@
 			baseConfigurationReference = C604A21E093CD08BC095E492 /* Pods-Gagan-social.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Gagan-social/Gagan-social.entitlements";
 				DEVELOPMENT_TEAM = 5L8XK4NFJS;
 				INFOPLIST_FILE = "Gagan-social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

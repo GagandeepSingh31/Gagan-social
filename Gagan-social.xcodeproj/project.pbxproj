@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39B89A5C85AF3AA6A647404B /* Pods_Gagan_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E03028A9FDC1602285E2357 /* Pods_Gagan_social.framework */; };
+		6C0EE0F91E88395700EB3560 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0EE0F81E88395700EB3560 /* FeedVC.swift */; };
 		6C9F173D1E87BD2000A50B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F173C1E87BD2000A50B26 /* AppDelegate.swift */; };
 		6C9F173F1E87BD2000A50B26 /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F173E1E87BD2000A50B26 /* SignVC.swift */; };
 		6C9F17421E87BD2000A50B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9F17401E87BD2000A50B26 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		2E03028A9FDC1602285E2357 /* Pods_Gagan_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gagan_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0EE0F81E88395700EB3560 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		6C9F17391E87BD2000A50B26 /* Gagan-social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gagan-social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9F173C1E87BD2000A50B26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C9F173E1E87BD2000A50B26 /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				6C9F173E1E87BD2000A50B26 /* SignVC.swift */,
+				6C0EE0F81E88395700EB3560 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,7 +182,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -274,6 +277,7 @@
 				6C9F175B1E87E95300A50B26 /* RoundButton.swift in Sources */,
 				6C9F173D1E87BD2000A50B26 /* AppDelegate.swift in Sources */,
 				6C9F175F1E87EC8F00A50B26 /* FancyButton.swift in Sources */,
+				6C0EE0F91E88395700EB3560 /* FeedVC.swift in Sources */,
 				6C9F175D1E87EB4F00A50B26 /* FancyTextField.swift in Sources */,
 				6C9F17561E87E72F00A50B26 /* FancyView.swift in Sources */,
 				6C9F17591E87E7D600A50B26 /* Constants.swift in Sources */,
@@ -400,6 +404,7 @@
 			baseConfigurationReference = DDBADE9D5BFD8830C78016B2 /* Pods-Gagan-social.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Gagan-social/Gagan-social.entitlements";
 				DEVELOPMENT_TEAM = 5L8XK4NFJS;
 				INFOPLIST_FILE = "Gagan-social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -414,6 +419,7 @@
 			baseConfigurationReference = C604A21E093CD08BC095E492 /* Pods-Gagan-social.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Gagan-social/Gagan-social.entitlements";
 				DEVELOPMENT_TEAM = 5L8XK4NFJS;
 				INFOPLIST_FILE = "Gagan-social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

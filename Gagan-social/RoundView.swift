@@ -1,14 +1,14 @@
 //
-//  FancyView.swift
+//  RoundView.swift
 //  Gagan-social
 //
-//  Created by Gagandeep Singh on 3/26/17.
+//  Created by Gagandeep Singh on 3/28/17.
 //  Copyright © 2017 Gagandeep Singh. All rights reserved.
 //
 
 import UIKit
 
-class FancyView: UIView {
+class RoundView: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,9 +17,18 @@ class FancyView: UIView {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        layer.cornerRadius = 2.0
+        
+        
         
         
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = self.frame.width / 2
+        
+    }
+
 
 }

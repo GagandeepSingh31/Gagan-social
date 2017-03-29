@@ -20,7 +20,10 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        
+        //Go to the firebase database posts.
+        DataService.ds.REF_POSTS.observe(.value, with : { (snapshot) in
+            print(snapshot.value)
+            })
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

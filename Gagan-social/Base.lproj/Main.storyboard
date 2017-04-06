@@ -184,13 +184,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GAv-cs-dma">
                                         <rect key="frame" x="8" y="8" width="327" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="W45-K9-YyG" customClass="RoundImageView" customModule="Gagan_social" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="W45-K9-YyG" customClass="RoundImageView" customModule="Gagan_social" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="MSf-6q-rV7"/>
                                                     <constraint firstAttribute="width" constant="49" id="sw7-33-vM5"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="1GK-6S-6fP" appends="YES" id="hxh-RO-kOA"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-87-pO9" customClass="FancyTextField" customModule="Gagan_social" customModuleProvider="target">
                                                 <rect key="frame" x="59" y="0.0" width="209" height="49"/>
@@ -344,10 +348,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdded" destination="W45-K9-YyG" id="gNO-pr-n2q"/>
                         <outlet property="tableView" destination="PjM-KS-d31" id="oOK-RW-jzK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBU-6S-TLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1GK-6S-6fP">
+                    <connections>
+                        <action selector="addImageTapped:" destination="NpO-Jv-V1J" id="QJ2-Yn-0Mp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="940" y="184.85757121439281"/>
         </scene>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundView: UIImageView {
+class RoundImageView: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()

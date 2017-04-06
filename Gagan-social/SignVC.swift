@@ -25,15 +25,12 @@ class SignVC : UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         
-        if let _ = KeychainWrapper.defaultKeychainWrapper.string(forKey: KEY_UID) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
@@ -105,11 +102,12 @@ class SignVC : UIViewController {
         
     }
     
+    
     func completedSignIn(id: String, userData : Dictionary<String , String>) {
         
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
-        KeychainWrapper.defaultKeychainWrapper.set(id, forKey: KEY_UID)
-        print("Gagan: Data saved to keychain ")
+       let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Gagan: Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     

@@ -14,9 +14,11 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource , UI
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var imageAdded: RoundImageView!
+    @IBOutlet weak var captionField: FancyTextField!
     
     var posts = [Post]()
     var imagePicker : UIImagePickerController!
+    var imageSelected = false
     
     //To make it Globally , we use static
     static var imageCache : NSCache<NSString, UIImage> = NSCache()
@@ -89,6 +91,7 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource , UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdded.image = image
+            imageSelected = true
             
         }else {
             print("Gagan: A valid image wasn't selected")
@@ -103,7 +106,61 @@ class FeedVC: UIViewController , UITableViewDelegate, UITableViewDataSource , UI
     }
     
     
+    @IBAction func postBtnTapped(_ sender: Any) {
+        
+        guard let caption = captionField.text , caption != ""
+            else {
+                print("Gagan: Caption field must be filled")
+                return
+        }
+        guard let img = imageAdded.image, imageSelected == true
+            else {
+                print("Gagan: Image must be selected")
+                return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUid = NSUUID().uuidString
+            let metaData = FIRStorageMetadata()
+            metaData.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metaData) { (metaData, error) in
+            
+                if error != nil {
+                    print("Gagan: Unable to upload to firebase Storage")
+                }else {
+                    print("Gagan: Images  successfully uploaded to firebase")
+                    let downloadURL = metaData?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                       self.postToFirebase(imgUrl: url)
+                    }
+                    
+                    
+                }
+            
+            }
+        }
+    }
     
+    func postToFirebase(imgUrl: String ) {
+        
+        let post : Dictionary<String, AnyObject> = [
+        "caption": captionField.text as AnyObject,
+        "imageUrl": imgUrl as AnyObject,
+        "likes": 0 as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        imageAdded.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
+    }
+
     @IBAction func signOutBtnTapped(_ sender: Any) {
         
        let keyChainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
